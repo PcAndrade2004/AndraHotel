@@ -42,6 +42,7 @@ public abstract class Funcionario {
 
     public abstract double calcularSalarioLiquido();
 
+    public abstract String getCargo();
 
     @Override
     public String toString() {
