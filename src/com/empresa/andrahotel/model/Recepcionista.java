@@ -37,4 +37,13 @@ public class Recepcionista extends Funcionario{
     public String getCargo() {
         return "Recepcionista";
     }
+
+    @Override
+    public String toString() {
+        return "\n==============" +
+                "\nRecepcionista" +
+                "\n==============" +
+                "\nTurno: " + turno +
+                "\nIdiomas Atendimento: " + idiomasAtendimento;
+    }
 }
