@@ -8,7 +8,7 @@ public class Recepcionista extends Funcionario{
     private String turno;
     private List<String> idiomasAtendimento;
 
-    public Recepcionista(String matricula, String nome, String cpf, double salarioBase, String turno, List<String> idiomasAtendimento) {
+    public Recepcionista(String matricula, String nome, String cpf, double salarioBase, boolean ativo, String turno) {
         super(matricula, nome, cpf, salarioBase);
         this.turno = turno;
         this.idiomasAtendimento = new ArrayList<>();
@@ -43,6 +43,7 @@ public class Recepcionista extends Funcionario{
         return "\n==============" +
                 "\nRecepcionista" +
                 "\n==============" +
+                super.toString() +
                 "\nTurno: " + turno +
                 "\nIdiomas Atendimento: " + idiomasAtendimento;
     }
