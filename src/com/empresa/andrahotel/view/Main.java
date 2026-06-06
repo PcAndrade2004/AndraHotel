@@ -1,5 +1,6 @@
 package com.empresa.andrahotel.view;
 
+import com.empresa.andrahotel.model.Gerente;
 import com.empresa.andrahotel.model.Recepcionista;
 
 public class Main {
@@ -14,5 +15,12 @@ public class Main {
         System.out.println(rec);
         System.out.println( "Salário Liquido: " + String.format("%.2f ", rec.calcularSalarioLiquido()));
         System.out.println(rec.getCargo());
+
+
+        Gerente g = new Gerente("M002", "Carlos Eduardo", "500-636-148-47", 1200.00, true, "Hospedaria", 10);
+
+        System.out.println(g);
+        System.out.println("Salário liquido: " + String.format("%.2f", g.calcularSalarioLiquido()));
+        System.out.println("Departamento: " + g.getCargo());
     }
 }
