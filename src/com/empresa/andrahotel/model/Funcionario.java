@@ -43,4 +43,15 @@ public abstract class Funcionario {
     public abstract double calcularSalarioLiquido();
 
 
+    @Override
+    public String toString() {
+        return "\n=================" +
+                "Funcionario" +
+                "\n=================" +
+                "\nMatricula: " + matricula +
+                "\nNome: " + nome +
+                "\nCPF: " + cpf +
+                "\nSalário base: " + salarioBase +
+                "\nAtivo" + ativo;
+    }
 }
