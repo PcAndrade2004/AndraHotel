@@ -13,7 +13,7 @@ public abstract class Funcionario {
         this.nome = nome;
         this.cpf = cpf;
         this.salarioBase = salarioBase;
-        this.ativo = false;
+        this.ativo = true;
     }
 
     public String getMatricula() {
@@ -46,13 +46,11 @@ public abstract class Funcionario {
 
     @Override
     public String toString() {
-        return "\n=================" +
-                "Funcionario" +
-                "\n=================" +
+        return
                 "\nMatricula: " + matricula +
                 "\nNome: " + nome +
                 "\nCPF: " + cpf +
-                "\nSalário base: " + salarioBase +
-                "\nAtivo" + ativo;
+                "\nSalário: R$ : " + String.format("%.2f ", salarioBase) +
+                "\nAtivo: " + ativo;
     }
 }
