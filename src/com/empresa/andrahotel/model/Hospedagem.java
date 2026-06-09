@@ -53,4 +53,10 @@ public abstract class Hospedagem {
 
        return dias;
     }
+
+    public abstract double calcularTotal();
+
+    public abstract String gerarDescrisaoFatura();
+
+
 }
