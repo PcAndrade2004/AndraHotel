@@ -13,6 +13,10 @@ public abstract class Hospedagem {
     private String observacoes;
 
     public Hospedagem(String id, LocalDate dataCheckIn, LocalDate dataCheckOut, double valorDiaria, double desconto,String observacoes) {
+        if (dataCheckOut.isBefore(dataCheckIn)) {
+                throw new IllegalAccessException("Check-out não pode ser anterior ao check-in.")
+
+        }
         this.id = id;
         this.dataCheckIn = dataCheckIn;
         this.dataCheckOut = dataCheckIn;
@@ -54,7 +58,9 @@ public abstract class Hospedagem {
        return dias;
     }
 
-
+    public void aplicarDesconto(double percentual) {
+        this.valorDiaria = valorDiaria;
+    }
 
     public abstract double calcularTotal();
 
