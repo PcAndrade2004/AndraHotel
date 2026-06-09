@@ -54,9 +54,19 @@ public abstract class Hospedagem {
        return dias;
     }
 
+
+
     public abstract double calcularTotal();
 
     public abstract String gerarDescrisaoFatura();
 
-
+    @Override
+    public String toString() {
+        return "Id: " + id +
+                "Data CheckIn" + dataCheckIn +
+                "Data CheckOut: " + dataCheckOut +
+                "Valor diária: " + valorDiaria +
+                "Desconto: " + desconto +
+                "Observações: " + observacoes;
+    }
 }
