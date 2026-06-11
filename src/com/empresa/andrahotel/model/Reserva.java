@@ -8,12 +8,14 @@ public class Reserva extends Hospedagem {
     private int numeroPessoas;
     private boolean incluiCafeDaManha;
     private StatusReserva statusReserva;
+    private Quarto quarto;
 
-    public Reserva(String id, LocalDate dataCheckIn, LocalDate dataCheckOut, double valorDiaria, double desconto, String observacoes, int numeroPessoas, boolean incluiCafeDaManha, StatusReserva statusReserva) {
+    public Reserva(String id, LocalDate dataCheckIn, LocalDate dataCheckOut, double valorDiaria, double desconto, String observacoes, int numeroPessoas, boolean incluiCafeDaManha, StatusReserva statusReserva, Quarto quarto) {
         super(id, dataCheckIn, dataCheckOut, valorDiaria, desconto, observacoes);
         this.numeroPessoas = numeroPessoas;
         this.incluiCafeDaManha = incluiCafeDaManha;
         this.statusReserva = statusReserva;
+        this.quarto = quarto;
     }
 
     public int getNumeroPessoas() {
@@ -36,19 +38,31 @@ public class Reserva extends Hospedagem {
         this.statusReserva = statusReserva;
     }
 
+    public Quarto getQuarto() {
+        return quarto;
+    }
+
     @Override
     public double calcularTotal() {
         long dias = ChronoUnit.DAYS.between(getDataCheckIn(), getDataCheckOut());
 
-        double valorTotalSemCafe = dias * getValorDiaria();
-        return valorTotalSemCafe;
+        double valorBase = dias * getValorDiaria();
+
+        if (quarto.isPossuiVaranda() == true){
+            return valorBase + (valorBase * 5) / 100;
+        }else if (quarto.isPossuiArCondicionado() == true){
+            return valorBase + (valorBase * 8) / 100;
+        }else if(incluiCafeDaManha == true) {
+            return valorBase + (valorBase * 5) / 100;
+        }
+        return valorBase;
     }
 
     public double calcularComCafeDaManha() {
         long dias = ChronoUnit.DAYS.between(getDataCheckIn(), getDataCheckOut());
 
         double valorDiaria = dias * getValorDiaria();
-        double valorComCafeDaManha = valorDiaria * 5 / 100;
+        double valorComCafeDaManha = (valorDiaria * 5) / 100;
 
         double total = valorComCafeDaManha + valorDiaria;
 
