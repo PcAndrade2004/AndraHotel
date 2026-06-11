@@ -46,4 +46,23 @@ public class ReservaTest {
         double total = reserva.calcularComCafeDaManha();
         assertEquals(1260.0, total);
     }
+
+    @Test
+    void gerarDescrisaoFatura() {
+        Reserva reserva = new Reserva("1",
+                LocalDate.of(2026, 06, 26),
+                LocalDate.of(2026, 06, 29),
+                400.0,
+                10.0,
+                "Teste",
+                20,
+                true,
+                StatusReserva.CONCLUIDA
+        );
+
+        String descricaoEsperada = "Check-In: 2026-06-26 Check-Out: 2026-06-29 Numéro de pessoas: 20 Diárias: 3 x R$ 400.0 Café da manha: true Status: CONCLUIDA Total: R$ 1200.0";
+        String descricaoAtual = reserva.gerarDescrisaoFatura();
+
+        assertEquals(descricaoEsperada, descricaoAtual);
+    }
 }
