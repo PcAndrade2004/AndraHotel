@@ -61,15 +61,14 @@ public class Quarto {
 
     @Override
     public String toString() {
-        return "Quarto{" +
-                "numero='" + numero + '\'' +
-                ", andar=" + andar +
-                ", tipo='" + tipo + '\'' +
-                ", capacidadePessoas=" + capacidadePessoas +
-                ", valorDiaria=" + valorDiaria +
-                ", status=" + status +
-                ", possuiVaranda=" + possuiVaranda +
-                ", possuiArCondicionado=" + possuiArCondicionado +
-                '}';
+        return "Quarto: " +
+                " Numéro: " + numero + '\'' +
+                " Andar: " + andar +
+                " Tipo; " + tipo + '\'' +
+                " Capacidade Pessoas: " + capacidadePessoas +
+                " Valor Diária: " + valorDiaria +
+                " Status: " + status +
+                " Possui Varanda: " + possuiVaranda +
+                " Possui Ar-condicionado: " + possuiArCondicionado;
     }
 }
