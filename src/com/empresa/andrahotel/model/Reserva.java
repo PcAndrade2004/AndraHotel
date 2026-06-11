@@ -40,6 +40,17 @@ public class Reserva extends Hospedagem{
         return valorTotalSemCafe;
     }
 
+    public double calcularComCafeDaManha() {
+        long dias  = ChronoUnit.DAYS.between(getDataCheckIn(), getDataCheckOut());
+
+        double valorDiaria = dias * getValorDiaria();
+        double valorComCafeDaManha = valorDiaria * 5 / 100;
+
+        double total = valorComCafeDaManha + valorDiaria;
+
+        return total;
+    }
+
     @Override
     public String gerarDescrisaoFatura() {
         return "";
