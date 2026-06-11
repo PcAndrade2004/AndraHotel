@@ -8,12 +8,14 @@ public class Reserva extends Hospedagem {
     private int numeroPessoas;
     private boolean incluiCafeDaManha;
     private StatusReserva statusReserva;
+    private Quarto quarto;
 
-    public Reserva(String id, LocalDate dataCheckIn, LocalDate dataCheckOut, double valorDiaria, double desconto, String observacoes, int numeroPessoas, boolean incluiCafeDaManha, StatusReserva statusReserva) {
+    public Reserva(String id, LocalDate dataCheckIn, LocalDate dataCheckOut, double valorDiaria, double desconto, String observacoes, int numeroPessoas, boolean incluiCafeDaManha, StatusReserva statusReserva, Quarto quarto) {
         super(id, dataCheckIn, dataCheckOut, valorDiaria, desconto, observacoes);
         this.numeroPessoas = numeroPessoas;
         this.incluiCafeDaManha = incluiCafeDaManha;
         this.statusReserva = statusReserva;
+        this.quarto = quarto;
     }
 
     public int getNumeroPessoas() {
