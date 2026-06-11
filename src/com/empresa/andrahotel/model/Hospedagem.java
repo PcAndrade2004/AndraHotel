@@ -19,7 +19,7 @@ public abstract class Hospedagem {
     public Hospedagem(String id, LocalDate dataCheckIn, LocalDate dataCheckOut, double valorDiaria, double desconto,String observacoes) {
         this.id = id;
         this.dataCheckIn = dataCheckIn;
-        this.dataCheckOut = dataCheckIn;
+        this.dataCheckOut = dataCheckOut;
         this.valorDiaria = valorDiaria;
         this.desconto = desconto;
         this.observacoes = observacoes;
