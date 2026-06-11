@@ -3,13 +3,13 @@ package com.empresa.andrahotel.model;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class Reserva extends Hospedagem{
+public class Reserva extends Hospedagem {
 
     private int numeroPessoas;
     private boolean incluiCafeDaManha;
     private StatusReserva statusReserva;
 
-    public Reserva(String id, LocalDate dataCheckIn, LocalDate dataCheckOut, double valorDiaria, double desconto, String observacoes, int numeroPessoas, boolean incluiCafeDaManha, StatusReserva statusReserva){
+    public Reserva(String id, LocalDate dataCheckIn, LocalDate dataCheckOut, double valorDiaria, double desconto, String observacoes, int numeroPessoas, boolean incluiCafeDaManha, StatusReserva statusReserva) {
         super(id, dataCheckIn, dataCheckOut, valorDiaria, desconto, observacoes);
         this.numeroPessoas = numeroPessoas;
         this.incluiCafeDaManha = incluiCafeDaManha;
@@ -21,6 +21,10 @@ public class Reserva extends Hospedagem{
     }
 
     public boolean isIncluiCafeDaManha() {
+        return incluiCafeDaManha;
+    }
+
+    public boolean getIncluiCafeDaManha() {
         return incluiCafeDaManha;
     }
 
@@ -41,7 +45,7 @@ public class Reserva extends Hospedagem{
     }
 
     public double calcularComCafeDaManha() {
-        long dias  = ChronoUnit.DAYS.between(getDataCheckIn(), getDataCheckOut());
+        long dias = ChronoUnit.DAYS.between(getDataCheckIn(), getDataCheckOut());
 
         double valorDiaria = dias * getValorDiaria();
         double valorComCafeDaManha = valorDiaria * 5 / 100;
@@ -52,7 +56,19 @@ public class Reserva extends Hospedagem{
     }
 
     @Override
+    public Long calcularNumeroDiarias() {
+        return super.calcularNumeroDiarias();
+    }
+
+    @Override
     public String gerarDescrisaoFatura() {
-        return "";
+        return
+                "Check-In: " + getDataCheckIn() +
+                        " Check-Out: " + getDataCheckOut() +
+                        " Numéro de pessoas: " + getNumeroPessoas() +
+                        " Diárias: " + calcularNumeroDiarias() + " x R$ " + getValorDiaria() +
+                        " Café da manha: " + getIncluiCafeDaManha() +
+                        " Status: " + getStatusReserva() +
+                        " Total: R$ " + calcularTotal();
     }
 }
