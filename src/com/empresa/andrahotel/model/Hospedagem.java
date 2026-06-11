@@ -12,13 +12,14 @@ public abstract class Hospedagem {
     private double desconto;
     private String observacoes;
 
-    public Hospedagem(String id, LocalDate dataCheckIn, LocalDate dataCheckOut, double valorDiaria, double desconto,String observacoes) throws IllegalAccessException {
-        if (dataCheckOut.isBefore(dataCheckIn)) {
-                throw new IllegalAccessException("Check-out não pode ser anterior ao check-in.");
-        }
+    public Hospedagem() {
+
+    }
+
+    public Hospedagem(String id, LocalDate dataCheckIn, LocalDate dataCheckOut, double valorDiaria, double desconto,String observacoes) {
         this.id = id;
         this.dataCheckIn = dataCheckIn;
-        this.dataCheckOut = dataCheckIn;
+        this.dataCheckOut = dataCheckOut;
         this.valorDiaria = valorDiaria;
         this.desconto = desconto;
         this.observacoes = observacoes;
