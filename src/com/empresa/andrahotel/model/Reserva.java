@@ -48,12 +48,14 @@ public class Reserva extends Hospedagem {
 
         double valorBase = dias * getValorDiaria();
 
-        if (quarto.isPossuiVaranda() == true){
-            return valorBase + (valorBase * 5) / 100;
-        }else if (quarto.isPossuiArCondicionado() == true){
-            return valorBase + (valorBase * 8) / 100;
-        }else if(incluiCafeDaManha == true) {
-            return valorBase + (valorBase * 5) / 100;
+        if (quarto.isPossuiVaranda()) {
+            valorBase += (valorBase * 10) / 100;
+        }
+        if (quarto.isPossuiArCondicionado()) {
+            valorBase += (valorBase * 8) / 100;
+        }
+        if (incluiCafeDaManha) {
+            valorBase += (valorBase * 5) / 100;
         }
         return valorBase;
     }
