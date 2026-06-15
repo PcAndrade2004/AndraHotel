@@ -67,6 +67,15 @@ public class Hotel {
         return null;
     }
 
+    public List<Funcionario> buscarFuncionariosAtivos() {
+        for (Funcionario funcionario : funcionarios) {
+            if (funcionario.isAtivo()) {
+                return funcionarios;
+            }
+        }
+        return null;
+    }
+
 
 
 
