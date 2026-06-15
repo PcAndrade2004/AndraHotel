@@ -56,6 +56,17 @@ public class Hotel {
         return quartos;
     }
 
+    public Quarto buscarQuartoPorNumero(String numero) {
+
+        for (Quarto quarto : quartos) {
+            if(quarto.getNumeroQuarto().equals(numero)) {
+                return quarto;
+            }
+        }
+
+        return null;
+    }
+
 
 
 
