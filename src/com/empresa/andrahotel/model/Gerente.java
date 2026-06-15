@@ -5,7 +5,7 @@ public class Gerente extends Funcionario {
     private String departamento;
     private double percentualBonus;
 
-    public Gerente (String matricula, String nome, String cpf, double salarioBase, boolean ativo, String departamento, double percentualBonus) {
+    public Gerente (String matricula, String nome, String cpf, double salarioBase,String departamento, double percentualBonus) {
         super(matricula, nome, cpf, salarioBase);
         this.departamento = departamento;
         this.percentualBonus = percentualBonus;

@@ -80,13 +80,10 @@ public class Hotel {
         double total = 0;
         for(Funcionario funcionario : funcionarios) {
             funcionario.calcularSalarioLiquido();
+            total += funcionario.calcularSalarioLiquido();
         }
         return total;
     }
-
-
-
-
 
     public String getNome() {
         return nome;
