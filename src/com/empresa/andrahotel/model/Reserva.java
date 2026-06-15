@@ -67,11 +67,6 @@ public class Reserva extends Hospedagem {
     }
 
     @Override
-    public Long calcularNumeroDiarias() {
-        return super.calcularNumeroDiarias();
-    }
-
-    @Override
     public String gerarDescrisaoFatura() {
         return
                 "Check-In: " + getDataCheckIn() +
