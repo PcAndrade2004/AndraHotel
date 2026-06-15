@@ -21,8 +21,8 @@ public class ReservaTest {
                 2,
                 400.0,
                 StatusQuarto.DISPONIVEL,
-                false,
-                false
+                true,
+                true
         );
 
 
@@ -31,18 +31,20 @@ public class ReservaTest {
                 LocalDate.of(2026, 6, 26),
                 LocalDate.of(2026, 6, 29),
                 400.0,
-                10.0,
+                0.8,
                 "Teste",
                 20,
-                false,
+                true,
                 StatusReserva.CONCLUIDA,
                 quarto
         );
 
         double total = reserva.calcularTotal();
 
-        assertEquals(1200.0, total);
+        assertEquals(1464.192, total);
 
     }
+
+
 
 }
