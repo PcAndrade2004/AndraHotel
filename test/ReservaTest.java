@@ -1,12 +1,9 @@
 import com.empresa.andrahotel.model.Quarto;
 import com.empresa.andrahotel.model.Reserva;
-import com.empresa.andrahotel.model.StatusQuarto;
 import com.empresa.andrahotel.model.StatusReserva;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestTemplate;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -19,10 +16,7 @@ public class ReservaTest {
                 1,
                 "Standard",
                 2,
-                400.0,
-                StatusQuarto.DISPONIVEL,
-                true,
-                true
+                400.0
         );
 
 
@@ -52,10 +46,7 @@ public class ReservaTest {
                 1,
                 "Standard",
                 2,
-                400.0,
-                StatusQuarto.DISPONIVEL,
-                false,
-                false
+                400.0
         );
 
 
@@ -85,10 +76,7 @@ public class ReservaTest {
                 1,
                 "Standard",
                 2,
-                400.0,
-                StatusQuarto.DISPONIVEL,
-                false,
-                true
+                400.0
         );
 
 
