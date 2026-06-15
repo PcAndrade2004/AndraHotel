@@ -93,6 +93,14 @@ public class Hotel {
         return quartos;
     }
 
+    public List<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public List<Hospede> getHospedes() {
+        return hospedes;
+    }
+
     public String getCnpj() {
         return cnpj;
     }
