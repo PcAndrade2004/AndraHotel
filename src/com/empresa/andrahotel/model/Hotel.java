@@ -34,6 +34,12 @@ public class Hotel {
         return quartos.removeIf(quarto -> quarto.getNumeroQuarto().equals(numero));
     }
 
+    public void adicionarFuncionario(Funcionario funcionario){
+        funcionarios.add(funcionario);
+    }
+
+
+
     public String getNome() {
         return nome;
     }
