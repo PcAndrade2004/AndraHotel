@@ -29,6 +29,9 @@ public class Hospede {
         this.historicoReservas.add(hospedagem);
     }
 
+//    public double calcularTotalGasto(Hospedagem cal) {
+//        return cal.calcularTotal();
+//    }
 
     public String getNome() {
         return nome;
