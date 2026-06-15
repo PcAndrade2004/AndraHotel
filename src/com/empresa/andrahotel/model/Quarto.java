@@ -12,7 +12,7 @@ public class Quarto {
     private boolean possuiArCondicionado;
 
 
-    public Quarto(String numeroQuarto, int andar, String tipo, int capacidadePessoas, double valorDiaria) {
+    public Quarto(String numeroQuarto, int andar, String tipo, int capacidadePessoas, double valorDiaria, StatusQuarto status, boolean possuiVaranda, boolean possuiArCondicionado) {
         this.numeroQuarto = numeroQuarto;
         this.andar = andar;
         this.tipo = tipo;
