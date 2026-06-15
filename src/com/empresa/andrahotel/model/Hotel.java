@@ -89,6 +89,10 @@ public class Hotel {
         return nome;
     }
 
+    public List<Quarto> getQuartos() {
+        return quartos;
+    }
+
     public String getCnpj() {
         return cnpj;
     }
