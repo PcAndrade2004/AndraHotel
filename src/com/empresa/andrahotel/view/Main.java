@@ -5,11 +5,11 @@ import com.empresa.andrahotel.model.Recepcionista;
 
 public class Main {
     public static void main(String[] args) {
-<<<<<<< HEAD
-        Recepcionista rec = new Recepcionista("M001", "Ana Lima", "1232.4536.78439-00", 2500.0, true, "Manhã");
-=======
-        Recepcionista rec = new Recepcionista("M001", "Ana Lima", "123.456.789-00", 2500.0, "Manhã");
->>>>>>> fox
+
+        Recepcionista rec = new Recepcionista("M001", "Ana Lima", "1232.4536.78439-00", 2500.0, "Manhã");
+
+        Recepcionista rec2 = new Recepcionista("M001", "Ana Lima", "123.456.789-00", 2500.0, "Manhã");
+
 
         rec.adicionarIdioma("Português");
         rec.adicionarIdioma("Italia");

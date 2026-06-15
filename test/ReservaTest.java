@@ -45,6 +45,72 @@ public class ReservaTest {
 
     }
 
+    @Test
+    void calcularTotal2() {
+        Quarto quarto = new Quarto(
+                "101",
+                1,
+                "Standard",
+                2,
+                400.0,
+                StatusQuarto.DISPONIVEL,
+                false,
+                false
+        );
+
+
+        Reserva reserva = new Reserva(
+                "1",
+                LocalDate.of(2026, 6, 26),
+                LocalDate.of(2026, 6, 29),
+                400.0,
+                0.8,
+                "Teste",
+                20,
+                false,
+                StatusReserva.CONCLUIDA,
+                quarto
+        );
+
+        double total = reserva.calcularTotal();
+
+        assertEquals(1200.0, total);
+
+    }
+
+    @Test
+    void calcularTotal3() {
+        Quarto quarto = new Quarto(
+                "101",
+                1,
+                "Standard",
+                2,
+                400.0,
+                StatusQuarto.DISPONIVEL,
+                false,
+                true
+        );
+
+
+        Reserva reserva = new Reserva(
+                "1",
+                LocalDate.of(2026, 6, 26),
+                LocalDate.of(2026, 6, 29),
+                400.0,
+                0.8,
+                "Teste",
+                20,
+                true,
+                StatusReserva.CONCLUIDA,
+                quarto
+        );
+
+        double total = reserva.calcularTotal();
+
+        assertEquals(1356.0, total);
+
+    }
+
 
 
 }
