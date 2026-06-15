@@ -76,6 +76,14 @@ public class Hotel {
         return null;
     }
 
+    public double calcularFolhaPagamento() {
+        double total = 0;
+        for(Funcionario funcionario : funcionarios) {
+            funcionario.calcularSalarioLiquido();
+        }
+        return total;
+    }
+
 
 
 
