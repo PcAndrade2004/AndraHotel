@@ -46,6 +46,16 @@ public class Hotel {
         hospedes.add(h);
     }
 
+    public List<Quarto> buscarQuartoDisponivel() {
+        for (Quarto quarto : quartos) {
+            if(quarto.getStatus() == StatusQuarto.DISPONIVEL) {
+                quartos.add(quarto);
+            }
+
+        }
+        return quartos;
+    }
+
 
 
 
