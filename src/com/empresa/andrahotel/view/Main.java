@@ -4,7 +4,7 @@ import com.empresa.andrahotel.model.Recepcionista;
 
 public class Main {
     public static void main(String[] args) {
-        Recepcionista rec = new Recepcionista("M001", "Ana Lima", "123.456.789-00", 2500.0, true, "Manhã");
+        Recepcionista rec = new Recepcionista("M001", "Ana Lima", "123.456.789-00", 2500.0, "Manhã");
 
         rec.adicionarIdioma("Português");
         rec.adicionarIdioma("Italia");
