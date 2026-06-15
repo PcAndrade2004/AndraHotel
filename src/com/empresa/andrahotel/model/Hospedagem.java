@@ -58,8 +58,9 @@ public abstract class Hospedagem {
        return dias;
     }
 
-    public void aplicarDesconto(double percentual) {
-        this.valorDiaria = valorDiaria;
+    public double aplicarDesconto(double percentual) {
+        this.valorDiaria = valorDiaria - (valorDiaria * percentual / 100);
+        return percentual;
     }
 
     public abstract double calcularTotal();

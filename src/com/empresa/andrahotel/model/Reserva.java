@@ -47,28 +47,27 @@ public class Reserva extends Hospedagem {
         long dias = ChronoUnit.DAYS.between(getDataCheckIn(), getDataCheckOut());
 
         double valorBase = dias * getValorDiaria();
+        double adicional = 0;
 
         if (quarto.isPossuiVaranda()) {
-            valorBase += (valorBase * 10) / 100;
+            adicional += (valorBase * 10) / 100;
         }
         if (quarto.isPossuiArCondicionado()) {
-            valorBase += (valorBase * 8) / 100;
+            adicional += (valorBase * 8) / 100;
         }
         if (incluiCafeDaManha) {
-            valorBase += (valorBase * 5) / 100;
+            adicional += (valorBase * 5) / 100;
         }
-        return valorBase;
-    }
 
-    public double calcularComCafeDaManha() {
-        long dias = ChronoUnit.DAYS.between(getDataCheckIn(), getDataCheckOut());
+        double total = valorBase + adicional;
+        double totalFinal = total;
 
-        double valorDiaria = dias * getValorDiaria();
-        double valorComCafeDaManha = (valorDiaria * 5) / 100;
+        if (quarto.isPossuiVaranda() && quarto.isPossuiArCondicionado() && isIncluiCafeDaManha()) {
+            double pacoteCompleto = total * getDesconto() / 100;
+            totalFinal = total - pacoteCompleto;
+        }
 
-        double total = valorComCafeDaManha + valorDiaria;
-
-        return total;
+        return totalFinal;
     }
 
     @Override
