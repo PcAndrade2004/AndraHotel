@@ -42,6 +42,12 @@ public class Hotel {
         return funcionarios.removeIf(funcionario -> funcionario.getMatricula().equals(numeroMatricula));
     }
 
+    public void adicionarHospede(Hospede h) {
+        hospedes.add(h);
+    }
+
+
+
 
 
     public String getNome() {
