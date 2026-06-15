@@ -25,6 +25,14 @@ public class Hospede {
         this.historicoReservas = new ArrayList();
     }
 
+    public void adicionarReserva(Hospedagem hospedagem){
+        this.historicoReservas.add(hospedagem);
+    }
+
+//    public double calcularTotalGasto(Hospedagem cal) {
+//        return cal.calcularTotal();
+//    }
+
     public String getNome() {
         return nome;
     }
