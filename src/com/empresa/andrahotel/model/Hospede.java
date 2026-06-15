@@ -25,6 +25,11 @@ public class Hospede {
         this.historicoReservas = new ArrayList();
     }
 
+    public void adicionarReserva(Hospedagem hospedagem){
+        this.historicoReservas.add(hospedagem);
+    }
+
+
     public String getNome() {
         return nome;
     }
