@@ -26,10 +26,6 @@ public class Reserva extends Hospedagem {
         return incluiCafeDaManha;
     }
 
-    public boolean getIncluiCafeDaManha() {
-        return incluiCafeDaManha;
-    }
-
     public StatusReserva getStatusReserva() {
         return statusReserva;
     }
@@ -82,7 +78,7 @@ public class Reserva extends Hospedagem {
                         " Check-Out: " + getDataCheckOut() +
                         " Numéro de pessoas: " + getNumeroPessoas() +
                         " Diárias: " + calcularNumeroDiarias() + " x R$ " + getValorDiaria() +
-                        " Café da manha: " + getIncluiCafeDaManha() +
+                        " Café da manha: " + isIncluiCafeDaManha() +
                         " Status: " + getStatusReserva() +
                         " Total: R$ " + calcularTotal();
     }
