@@ -2,7 +2,7 @@ package com.empresa.andrahotel.model;
 
 public class Quarto {
 
-    private String numero;
+    private String numeroQuarto;
     private int andar;
     private String tipo;
     private int capacidadePessoas;
@@ -12,8 +12,8 @@ public class Quarto {
     private boolean possuiArCondicionado;
 
 
-    public Quarto(String numero, int andar, String tipo, int capacidadePessoas, double valorDiaria, StatusQuarto status, boolean possuiVaranda, boolean possuiArCondicionado) {
-        this.numero = numero;
+    public Quarto(String numeroQuarto, int andar, String tipo, int capacidadePessoas, double valorDiaria, StatusQuarto status, boolean possuiVaranda, boolean possuiArCondicionado) {
+        this.numeroQuarto = numeroQuarto;
         this.andar = andar;
         this.tipo = tipo;
         this.capacidadePessoas = capacidadePessoas;
@@ -23,8 +23,8 @@ public class Quarto {
         this.possuiArCondicionado = possuiArCondicionado;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getNumeroQuarto() {
+        return numeroQuarto;
     }
 
     public int getAndar() {
@@ -62,7 +62,7 @@ public class Quarto {
     @Override
     public String toString() {
         return "Quarto: " +
-                " Numéro: " + numero + '\'' +
+                " Numéro: " + numeroQuarto + '\'' +
                 " Andar: " + andar +
                 " Tipo; " + tipo + '\'' +
                 " Capacidade Pessoas: " + capacidadePessoas +
